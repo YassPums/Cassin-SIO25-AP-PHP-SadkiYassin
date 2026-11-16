@@ -119,3 +119,9 @@ public/
 On utilise le MVC. Le contrôleur reçoit la demande, le modèle récupère ou enregistre les données dans MariaDB et la vue affiche la page. Apache pointe vers `public/` pour que les fichiers de configuration restent en dehors du dossier accessible sur le site.
 
 On va hacher les mots de passe avec `password_hash` et utiliser des requêtes préparées avec PDO. Le serveur vérifie le rôle à chaque action. Par exemple, un étudiant peut seulement accéder aux QCM de sa classe et consulter ses propres résultats. Les réglages de connexion à la base restent en local et les fichiers qui contiennent des secrets sont ignorés par Git.
+
+
+
+## MAQUETTE
+
+![maq1](C:\Users\Evguenii\Desktop\clone git\Cassin-SIO25-AP-PHP-SadkiYassin\notre_projet\docs\projet\Medias\maq1.png)![maq2](C:\Users\Evguenii\Desktop\clone git\Cassin-SIO25-AP-PHP-SadkiYassin\notre_projet\docs\projet\Medias\maq2.png)![maq3](C:\Users\Evguenii\Desktop\clone git\Cassin-SIO25-AP-PHP-SadkiYassin\notre_projet\docs\projet\Medias\maq3.png)![maq4](C:\Users\Evguenii\Desktop\clone git\Cassin-SIO25-AP-PHP-SadkiYassin\notre_projet\docs\projet\Medias\maq4.png)![maq5](C:\Users\Evguenii\Desktop\clone git\Cassin-SIO25-AP-PHP-SadkiYassin\notre_projet\docs\projet\Medias\maq5.png)
