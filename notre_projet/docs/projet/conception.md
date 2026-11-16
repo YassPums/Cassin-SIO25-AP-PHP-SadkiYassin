@@ -87,20 +87,39 @@ Quand un étudiant passe un QCM, on garde sa tentative, les réponses qu'il a ch
 ## MLD
 
 CLASSE = (idClasse, nomClasse, anneeScolaire);
+
 MATIERE = (idMatiere, nomMatiere);
-QUESTION = (idQuestion, enonce, typeQuestion, commentaireCorrection);
-PROPOSITION = (idProposition, texte, estCorrect, ordreCorrect, #idQuestion);
+
+UTILISATEUR = (idUtilisateur, nom, prenom,
+email, mdpHash, role, #idClasse);
+
+ENSEIGNEMENT = (idEnseignement, #idUtilisateur,
+#idClasse, #idMatiere);
+
+QCM = (idQcm, titre, dateDebut, dateFin,
+nombreQuestions, #idEnseignement);
+
+QUESTION = (idQuestion, enonce, typeQuestion,
+commentaireCorrection);
+
+PROPOSITION = (idProposition, texte, estCorrect,
+ordreCorrect, #idQuestion);
+
 MOT_CLE = (idMotCle, libelle);
-UTILISATEUR = (idUtilisateur, nom, prenom, email, mdpHash, role, #idClasse, #idClasse_1);
-ENSEIGNEMENT = (idEnseignement, #idUtilisateur, #idMatiere);
-QCM = (idQcm, titre, dateDebut, dateFin, nombreQuestion, #idEnseignement);
-TENTATIVE = (idTentative, dateValidation, score, #idQcm, #idUtilisateur);
-REPONSE = (idReponse, #idQuestion, #idTentative);
-Utiliser_Critere_tirrage = (#idQcm, #idMotCle);
-Etre_Habilite_A_Enseigner = (#idUtilisateur, #idMatiere);
-Etre_Classe_Par = (#idQuestion, #idMotCle);
+
+TENTATIVE = (idTentative, dateValidation,
+score, #idUtilisateur, #idQcm);
+
+HABILITER = (#idUtilisateur, #idMatiere);
+
+UTILISER_CRITERE = (#idQcm, #idMotCle);
+
+CLASSER = (#idQuestion, #idMotCle);
+
 CONTENIR = (#idQcm, #idQuestion);
-SELECTIONNER = (#idProposition, #idReponse);
+
+SELECTIONNER = (#idTentative, #idProposition,
+ordreSaisi);
 
 ## Dossiers du projet
 
