@@ -1,0 +1,4 @@
+/config/database.php
+/vendor/
+/storage/logs/
+/storage/cache/
