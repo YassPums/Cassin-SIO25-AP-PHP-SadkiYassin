@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($titre) ?></title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 
-    <h1><?= htmlspecialchars($titre) ?></h1>
+    <main class="conteneur">
 
-    <p>
-        Bienvenue
-        <?= htmlspecialchars($_SESSION['prenom']) ?>
-        <?= htmlspecialchars($_SESSION['nom']) ?>
-    </p>
+        <h1><?= htmlspecialchars($titre) ?></h1>
 
-    <p>
-        Votre rôle :
-        <?= htmlspecialchars($_SESSION['role']) ?>
-    </p>
+        <p>
+            Bienvenue
+            <?= htmlspecialchars($_SESSION['prenom']) ?>
+            <?= htmlspecialchars($_SESSION['nom']) ?>
+        </p>
 
-    <form action="/deconnexion" method="POST">
+        <p>
+            Votre rôle :
+            <?= htmlspecialchars($_SESSION['role']) ?>
+        </p>
 
-        <input type="hidden" name="csrf_token"
-               value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+        <?php if ($_SESSION['role'] === 'admin'): ?>
 
-        <button type="submit">Se déconnecter</button>
+            <a class="bouton" href="/admin/utilisateurs">
+                Gérer les utilisateurs
+            </a>
 
-    </form>
+        <?php endif; ?>
+
+        <br><br>
+
+        <form action="/deconnexion" method="POST">
+
+            <input type="hidden" name="csrf_token"
+                   value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+
+            <button type="submit">Se déconnecter</button>
+
+        </form>
+
+    </main>
 
 </body>
 </html>

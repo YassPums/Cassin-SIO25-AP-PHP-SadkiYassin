@@ -33,4 +33,22 @@ class Utilisateur
 
         return $utilisateur;
     }
+
+    public function trouverTous(): array
+    {
+        $sql = 'SELECT utilisateur.idUtilisateur,
+                       utilisateur.nom,
+                       utilisateur.prenom,
+                       utilisateur.email,
+                       utilisateur.role,
+                       classe.nomClasse
+                FROM utilisateur
+                LEFT JOIN classe
+                ON utilisateur.idClasse = classe.idClasse
+                ORDER BY utilisateur.nom, utilisateur.prenom';
+
+        $requete = $this->connexion->query($sql);
+
+        return $requete->fetchAll();
+    }
 }
