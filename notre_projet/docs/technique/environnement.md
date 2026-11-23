@@ -16,14 +16,14 @@ Voici les principaux logiciels utilisés pour le projet :
 
 | Logiciel | Version |
 |---|---|
-| Windows | À compléter |
-| Ubuntu / WSL | À compléter |
-| Visual Studio Code | À compléter |
-| Git | À compléter |
-| Apache | À compléter |
-| PHP | À compléter |
-| MariaDB | À compléter |
-| Composer | À compléter |
+| Windows | 11 |
+| Ubuntu / WSL | 2.6.3.0 |
+| Visual Studio Code |  |
+| Git | 2.43 |
+| Apache | 2.4 |
+| PHP | 8.3.6 |
+| MariaDB | 15.1 |
+| Composer |  |
 
 Pour afficher les versions installées :
 
@@ -86,16 +86,6 @@ Pour démarrer MariaDB :
 
 ```bash
 sudo service mariadb start
-```
-
-
-
-Pour ce connecter avec le réseau du lycée :
-
-```bash
-sudo nano /etc/environment
-http_proxy="http://10.129.254.254:3128"
-https_proxy="http://10.129.254.254:3128"
 ```
 
 ---
